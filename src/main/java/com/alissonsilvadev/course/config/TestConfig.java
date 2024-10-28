@@ -1,4 +1,4 @@
-package com.alissonsilvadev.config;
+package com.alissonsilvadev.course.config;
 
 import java.util.Arrays;
 
