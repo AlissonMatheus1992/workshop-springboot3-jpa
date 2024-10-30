@@ -13,20 +13,20 @@ import com.alissonsilvadev.course.entities.User;
 import com.alissonsilvadev.course.services.UserService;
 
 @RestController
-@RequestMapping
+@RequestMapping(value ="/users")
 public class UserResource {
 
 	@Autowired 
 	private UserService service;
 	
-	@GetMapping(value ="/users")
+	@GetMapping
 	public ResponseEntity<List<User>> findAll() {
 		List<User> list = service.findAll();
 		System.out.println("Passei aqui 02");
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(value ="/users/{id}")
+	@GetMapping(value ="/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id) {
 		User obj = service.findById(id);
 		System.out.println("Passei aqui 01");
